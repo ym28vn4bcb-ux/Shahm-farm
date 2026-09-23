@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مزرعة وشاليه شهم | راحة، طبيعة، أجواء مميزة</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2d6a4f;
+            --secondary: #52b788;
+            --accent: #d4a373;
+            --dark: #1b4332;
+            --light: #f8f9fa;
+            --text-color: #333333;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+        body {
+            background-color: var(--light);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+        /* Header */
+        header {
+            background: linear-gradient(rgba(27, 67, 50, 0.85), rgba(27, 67, 50, 0.85)), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 130px 20px;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 900;
+        }
+        header p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            color: #e9ecef;
+        }
+        .btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .btn:hover {
+            background-color: #bc6c25;
+            transform: translateY(-2px);
+        }
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+        /* Sections */
+        section {
+            margin-bottom: 60px;
+        }
+        h2.section-title {
+            text-align: center;
+            color: var(--dark);
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        h2.section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        /* About */
+        .about-text {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: auto;
+            color: #555;
+        }
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border-right: 5px solid var(--secondary);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        .feature-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.03);
+        }
+        /* Info Box */
+        .info-box {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+        }
+        .info-item {
+            flex: 1;
+            min-width: 200px;
+            margin: 15px;
+        }
+        .info-item i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        .info-item h4 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 20px;
+        }
+        .contact-section h2 {
+            color: white;
+        }
+        .contact-section h2::after {
+            background-color: var(--accent);
+        }
+        .phones {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            direction: ltr;
+            font-weight: bold;
+        }
+        .whatsapp-btn {
+            background-color: #25d366;
+            color: white;
+            padding: 12px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        .whatsapp-btn:hover {
+            background-color: #20ba5a;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #112c21;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>مزرعة وشاليه شهم</h1>
+        <p>مكانكم للراحة، اللمة، والذكريات اللي بتستاهل تنحفظ 🤍🌿</p>
+        <a href="#contact" class="btn"><i class="fa-solid fa-phone"></i> احجز الآن</a>
+    </header>
+
+    <div class="container">
+
+        <!-- About Us -->
+        <section>
+            <h2 class="section-title">عن المزرعة والشاليه</h2>
+            <p class="about-text">
+                إذا كنتوا بتدوروا على مكان يجمع بين الراحة، الخصوصية، والمره... وجهتكم هي مزرعة وشاليه شهم. هنا بتلاقوا كل اللي تحتاجوه لقضاء يوم مميز مع العائلة والأحباب، وسط أجواء هادئة وطبيعة جميلة، بعيداً عن الروتين وضجة المدينة.
+            </p>
+        </section>
+
+        <!-- Features -->
+        <section>
+            <h2 class="section-title">مرافق وخدمات المزرعة</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fa-solid fa-water-ladder"></i>
+                    <h3>المسبح الخارجي</h3>
+                    <p>مسبح كبير بمساحة 14×6 متر، وعمق يبدأ من نصف متر وحتى 190 سم، مع غطاء كامل للحماية من أشعة الشمس ومسبح خاص للأطفال مناسب وآمن.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-house-chimney"></i>
+                    <h3>الشاليه والجلوس</h3>
+                    <p>غرف نوم مريحة ومكيفة، صالة واسعة ومكيفة بمطبخ أمريكي فاخر ومجهز، حمامات داخلية وخارجية مع شاورات.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <h3>الترفيه والألعاب</h3>
+                    <p>بلياردو داخلي 9 قدم، طاولة تنس، ملعب، سماعات بلوتوث محيطية، ساحة أطفال آمنة، وترامبولين 3×3.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-fire-burner"></i>
+                    <h3>الجلسات الخارجية والشواء</h3>
+                    <p>جلسات خارجية وسط أجواء طبيعية وإطلالات جميلة، مكان مخصص للباربيكيو، الشواء، والزرب.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section>
+            <h2 class="section-title">معرض الصور</h2>
+            <div class="gallery-grid">
+                <!-- استبدلي أسماء الصور بأسماء الصور الحقيقية الموجودة في مجلد images لديكِ -->
+                <div class="gallery-item">
+                    <img src="images/pool.jpg" alt="المسبح الخارجي">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/chalet.jpg" alt="الجلسات الخارجية">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/details.jpg" alt="مرافق المزرعة">
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Types & Info -->
+        <section>
+            <h2 class="section-title">تفاصيل الحجوزات</h2>
+            <div class="info-box">
+                <div class="info-item">
+                    <i class="fa-solid fa-sun"></i>
+                    <h4>حجوزات صباحية</h4>
+                    <p>استمتع بالدفء والنشاط وسط الطبيعة</p>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-moon"></i>
+                    <h4>حجوزات مسائية</h4>
+                    <p>أجواء ليلية ساحرة وموسيقية هادئة</p>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-car"></i>
+                    <h4>كراج واسع</h4>
+                    <p>يتسع كراج المزرعة حتى 14 سيارة بكل راحّة</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <h2 class="section-title" style="color: white;">للحجز والاستفسار والمعاينة</h2>
+            <p>الموقع: بلعما – تبعد عن بلدية بلعما كيلو و 500 متر.</p>
+            <div class="phones">
+                0776441130<br>
+                0785138386
+            </div>
+            <a href="https://wa.me/962776441130" target="_blank" class="whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب
+            </a>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>جميع الحقوق محفوظة © مزرعة وشاليه شهم 2026</p>
+    </footer>
+
+</body>
+</html>
