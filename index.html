@@ -108,7 +108,7 @@
             white-space: pre-line;
             line-height: 1.8;
         }
-        /* Features Grid (مربعات الخدمات والأيقونات بجانب بعضها) */
+        /* Features Grid - العودة للشكل الأنيق السابق */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -117,57 +117,70 @@
         .feature-card {
             background: white;
             padding: 25px 20px;
-            border-radius: 14px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             transition: 0.3s;
+            border-right: 4px solid var(--secondary);
             text-align: center;
-            border-top: 4px solid var(--secondary);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
         }
-        .feature-icon-box {
-            width: 60px;
-            height: 60px;
-            background-color: #e8f5e9;
+        .feature-card i {
+            font-size: 2.5rem;
             color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            font-size: 1.5rem;
+            margin-bottom: 15px;
         }
         .feature-card h3 {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             margin-bottom: 10px;
             color: var(--dark);
         }
         .feature-card p {
             color: #666;
-            font-size: 0.85rem;
-            margin-bottom: 15px;
+            font-size: 0.9rem;
         }
-        .feature-link {
-            font-size: 0.85rem;
+        
+        /* زر أيقونة الصور الخاص */
+        .gallery-btn-container {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .gallery-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+        }
+        .gallery-btn i {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 10px;
             color: var(--accent);
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            transition: 0.2s;
         }
-        .feature-link:hover {
-            color: #bc6c25;
+        .gallery-btn:hover {
+            background-color: var(--dark);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
-        /* Gallery Grid */
+        /* Gallery Grid (مخفي بالبداية ويظهر عند الضغط) */
+        #gallery-section {
+            display: none; /* مخفي بشكل افتراضي */
+            animation: fadeIn 0.8s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -295,47 +308,43 @@
             </p>
         </section>
 
-        <!-- Features (مرافق وخدمات المزرعة كبطاقات مربعة مع أيقونات) -->
+        <!-- Features (تمت إعادتها لشكلها الأصلي الأنيق) -->
         <section>
             <h2 class="section-title">مرافق وخدمات المزرعة</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div>
-                        <div class="feature-icon-box"><i class="fa-solid fa-water-ladder"></i></div>
-                        <h3>المسبح الخارجي</h3>
-                        <p>مسبح كبير بمساحة 14×6 متر، وعمق من نصف متر لـ 190 سم، مع غطاء كامل ومسبح خاص للأطفال.</p>
-                    </div>
-                    <a href="#gallery" class="feature-link"><i class="fa-solid fa-images"></i> صور المسبح</a>
+                    <i class="fa-solid fa-water-ladder"></i>
+                    <h3>المسبح الخارجي</h3>
+                    <p>مسبح كبير بمساحة 14×6 متر، وعمق يبدأ من نصف متر وحتى 190 سم، مع غطاء كامل للحماية من أشعة الشمس ومسبح خاص للأطفال مناسب وآمن.</p>
                 </div>
                 <div class="feature-card">
-                    <div>
-                        <div class="feature-icon-box"><i class="fa-solid fa-house-chimney"></i></div>
-                        <h3>الشاليه والجلوس</h3>
-                        <p>غرف نوم مكيفة، صالة واسعة بمطبخ أمريكي فاخر ومجهز، وحمامات داخلية وخارجية.</p>
-                    </div>
-                    <a href="#gallery" class="feature-link"><i class="fa-solid fa-images"></i> صور الشاليه</a>
+                    <i class="fa-solid fa-house-chimney"></i>
+                    <h3>الشاليه والجلوس</h3>
+                    <p>غرف نوم مريحة ومكيفة، صالة واسعة ومكيفة بمطبخ أمريكي فاخر ومجهز، حمامات داخلية وخارجية مع شاورات.</p>
                 </div>
                 <div class="feature-card">
-                    <div>
-                        <div class="feature-icon-box"><i class="fa-solid fa-gamepad"></i></div>
-                        <h3>الترفيه والألعاب</h3>
-                        <p>بلياردو 9 قدم، طاولة تنس، سماعات بلوتوث محيطية، ساحة أطفال وترامبولين 3×3.</p>
-                    </div>
-                    <a href="#gallery" class="feature-link"><i class="fa-solid fa-images"></i> صور الألعاب</a>
+                    <i class="fa-solid fa-gamepad"></i>
+                    <h3>الترفيه والألعاب</h3>
+                    <p>بلياردو داخلي 9 قدم، طاولة تنس، ملعب، سماعات بلوتوث محيطية، ساحة أطفال آمنة، وترامبولين 3×3.</p>
                 </div>
                 <div class="feature-card">
-                    <div>
-                        <div class="feature-icon-box"><i class="fa-solid fa-fire-burner"></i></div>
-                        <h3>الجلسات والشواء</h3>
-                        <p>جلسات خارجية وسط الطبيعة، مع مكان مخصص للباربيكيو، الشواء، والزرب.</p>
-                    </div>
-                    <a href="#gallery" class="feature-link"><i class="fa-solid fa-images"></i> صور الجلسات</a>
+                    <i class="fa-solid fa-fire-burner"></i>
+                    <h3>الجلسات الخارجية والشواء</h3>
+                    <p>جلسات خارجية وسط أجواء طبيعية وإطلالات جميلة، مكان مخصص للباربيكيو، الشواء، والزرب.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery Section -->
-        <section id="gallery">
+        <!-- أيقونة / زر الدخول للصور -->
+        <div class="gallery-btn-container" id="gallery-btn-container">
+            <button class="gallery-btn" onclick="showGallery()">
+                <i class="fa-solid fa-images"></i>
+                اضغط هنا للدخول إلى معرض الصور
+            </button>
+        </div>
+
+        <!-- Gallery Section (سيظهر فقط عند الضغط على الزر) -->
+        <section id="gallery-section">
             <h2 class="section-title">معرض صور المزرعة</h2>
             <div class="gallery-grid">
                 <div class="gallery-item"><img src="IMG_7163.jpeg" alt="مزرعة شهم"></div>
@@ -396,6 +405,19 @@
     <footer>
         <p>جميع الحقوق محفوظة © مزرعة وشاليه شهم 2026</p>
     </footer>
+
+    <!-- سكربت إظهار الصور -->
+    <script>
+        function showGallery() {
+            // إخفاء الزر
+            document.getElementById('gallery-btn-container').style.display = 'none';
+            // إظهار قسم الصور
+            var gallery = document.getElementById('gallery-section');
+            gallery.style.display = 'block';
+            // النزول التلقائي السلس إلى الصور
+            gallery.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 
 </body>
 </html>
