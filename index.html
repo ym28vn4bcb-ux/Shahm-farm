@@ -3,678 +3,438 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بانوراما الشرق - Panorama Cafe</title>
-    <!-- استدعاء الخطوط -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Great+Vibes&family=Marhey:wght@500;700&display=swap" rel="stylesheet">
+    <title>مزرعة وشاليه شهم | راحة، طبيعة، أجواء مميزة</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --dark-beige: #b89778;
-            --beige-glow: rgba(184, 151, 120, 0.4);
-            --beige-border: rgba(184, 151, 120, 0.35);
+            --primary: #2d6a4f;
+            --secondary: #52b788;
+            --accent: #d4a373;
+            --dark: #1b4332;
+            --light: #f8f9fa;
+            --text-color: #444444;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Amiri', serif;
+            font-family: 'Cairo', sans-serif;
         }
-        
         body {
-            background-color: #0b0b0b;
-            color: #f5f5f5;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: var(--light);
+            color: var(--text-color);
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
-
-        .header .cafe-title {
-            font-family: 'Marhey', sans-serif !important;
-            font-size: 30px;
-            font-weight: 700;
-            color: var(--dark-beige);
-            letter-spacing: 1px;
-            text-shadow: 0 0 10px var(--beige-glow), 0 0 20px rgba(184, 151, 120, 0.2);
-        }
-
-        .header .cafe-subtitle {
-            font-family: 'Great Vibes', cursive !important;
-            font-size: 24px !important;
-            color: #ddd;
-            margin-top: 4px;
-        }
-
-        .header .logo-img {
-            box-shadow: 0 0 25px rgba(184, 151, 120, 0.5);
-            border: 2.5px solid var(--dark-beige) !important;
-        }
-
-        .phone-container {
-            width: 100%;
-            max-width: 440px;
-            height: 100vh;
-            max-height: 932px;
-            background-color: #0b0b0b;
-            position: relative;
-            overflow-y: auto;
-            box-shadow: 0 0 40px rgba(184, 151, 120, 0.15);
-            display: flex;
-            flex-direction: column;
-        }
-        .phone-container::-webkit-scrollbar {
-            width: 5px;
-        }
-        .phone-container::-webkit-scrollbar-thumb {
-            background: var(--dark-beige);
-            border-radius: 10px;
-        }
-        .header {
-            padding: 25px 20px;
+        /* Header - Background Image */
+        header {
+            background: linear-gradient(rgba(27, 67, 50, 0.75), rgba(27, 67, 50, 0.75)), url('IMG_7163.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: white;
             text-align: center;
-            position: relative;
-            border-bottom: 2px solid var(--beige-border);
-            background: linear-gradient(rgba(11, 11, 11, 0.78), rgba(11, 11, 11, 0.90)), url('cafe-bg.PNG') no-repeat center center/cover;
-            backdrop-filter: blur(4px);
+            padding: 130px 20px;
         }
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* خط اسم المزرعة مع تأثير الإضاءة الفخم */
+        header h1 {
+            font-family: 'Amiri', serif;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                         0 0 20px rgba(82, 183, 136, 0.8), 
+                         0 0 30px rgba(82, 183, 136, 0.6);
+            letter-spacing: 1px;
+        }
+        header p {
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            color: #f1f3f5;
+            font-weight: 300;
+        }
+        .btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .btn:hover {
+            background-color: #bc6c25;
+            transform: translateY(-2px);
+        }
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+        /* Sections */
+        section {
+            margin-bottom: 50px;
+        }
+        h2.section-title {
+            text-align: center;
+            color: var(--dark);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        h2.section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+            display: block;
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+        /* About */
+        .about-text {
+            text-align: center;
+            font-size: 1rem;
+            max-width: 750px;
+            margin: auto;
+            color: #555;
+            white-space: pre-line;
+            line-height: 1.8;
+        }
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .feature-card {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            transition: 0.3s;
+            border-right: 4px solid var(--secondary);
+            text-align: center;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
             margin-bottom: 15px;
         }
-        .lang-btn {
-            background: transparent;
-            border: 1.5px solid var(--dark-beige);
-            color: var(--dark-beige);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 14px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: all 0.3s ease;
+        .feature-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: var(--dark);
         }
-        .lang-btn:hover {
-            background: var(--dark-beige);
-            color: #0b0b0b;
+        .feature-card p {
+            color: #666;
+            font-size: 0.9rem;
         }
-        .logo-img {
-            width: 105px;
-            height: 105px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 12px;
-            display: block;
-            background: #000;
-        }
-        .content {
-            padding: 22px;
-            flex: 1;
-            background: #0b0b0b;
-        }
-        .home-view {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            align-items: center;
-        }
-        .action-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            width: 100%;
-            margin-top: 10px;
-        }
-        .action-card {
-            background: rgba(20, 20, 20, 0.9);
-            border: 1.5px solid var(--beige-border);
-            border-radius: 14px;
-            padding: 24px 12px;
+        
+        /* زر أيقونة الصور الخاص */
+        .gallery-btn-container {
             text-align: center;
-            color: #fff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            backdrop-filter: blur(6px);
+            margin: 50px 0;
         }
-        .action-card:hover {
-            background: rgba(184, 151, 120, 0.15);
-            border-color: var(--dark-beige);
-            transform: translateY(-4px);
-        }
-        .action-card i {
-            font-size: 28px;
-            color: var(--dark-beige);
-        }
-        .action-card span {
-            font-size: 16px;
-            font-weight: 700;
-        }
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 22px;
-            margin: 25px 0 15px;
-        }
-        .social-icons a {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            border: 1.5px solid var(--dark-beige);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--dark-beige);
-            font-size: 22px;
-            text-decoration: none;
-            background: rgba(20, 20, 20, 0.9);
-            transition: all 0.3s ease;
-        }
-        .social-icons a:hover {
-            background: var(--dark-beige);
-            color: #0b0b0b;
-        }
-        .footer-brand {
-            text-align: center;
-            font-size: 16px;
-            color: #aaa;
-            margin-top: 10px;
-        }
-        .category-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .category-card {
-            background: rgba(20, 20, 20, 0.92);
-            border: 1.5px solid var(--beige-border);
-            border-radius: 14px;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .category-card:hover {
-            border-color: var(--dark-beige);
-            background: rgba(184, 151, 120, 0.1);
-        }
-        .category-info {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        .category-info i {
-            font-size: 22px;
-            color: var(--dark-beige);
-            width: 35px;
-            text-align: center;
-        }
-        .category-info div h3 {
-            font-size: 17px;
-            font-weight: 700;
-            color: #fff;
-        }
-        .category-info div p {
-            font-size: 13px;
-            color: #ccc;
-        }
-        .category-card > i {
-            color: var(--dark-beige);
-            font-size: 16px;
-        }
-        .back-btn {
-            background: transparent;
+        .gallery-btn {
+            background-color: var(--primary);
+            color: white;
             border: none;
-            color: var(--dark-beige);
-            font-size: 16px;
-            font-weight: 700;
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            border-radius: 20px;
             cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+        }
+        .gallery-btn i {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+        .gallery-btn:hover {
+            background-color: var(--dark);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Gallery Section */
+        #gallery-section {
+            display: none;
+            animation: fadeIn 0.8s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+        }
+        .gallery-item {
+            background: white;
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            transition: 0.3s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        /* Info Box */
+        .info-box {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+        }
+        .info-item {
+            flex: 1;
+            min-width: 180px;
+            margin: 10px;
+        }
+        .info-item i {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .info-item h4 {
+            font-size: 1.05rem;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+        .info-item p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            border-radius: 16px;
+        }
+        .contact-section h2 {
+            color: white;
+        }
+        .contact-section h2::after {
+            background-color: var(--accent);
+        }
+        .contact-section p {
+            font-size: 0.95rem;
+        }
+        .phones {
+            font-size: 1.35rem;
+            margin: 15px 0;
+            direction: ltr;
+            font-weight: bold;
+        }
+        .whatsapp-btn {
+            background-color: #25d366;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.05rem;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 20px;
+            margin-top: 10px;
+            transition: 0.3s;
         }
-        .section-header-title {
+        .whatsapp-btn:hover {
+            background-color: #20ba5a;
+        }
+        /* Footer */
+        footer {
             text-align: center;
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--dark-beige);
-            margin-bottom: 20px;
-            border-bottom: 1.5px dashed var(--beige-border);
-            padding-bottom: 12px;
+            padding: 25px;
+            background-color: #112c21;
+            color: #aaa;
+            font-size: 0.9rem;
         }
-        .item-row {
-            background: rgba(20, 20, 20, 0.88);
-            border: 1.5px solid var(--beige-border);
-            border-radius: 12px;
-            padding: 12px 16px;
-            display: flex;
-            justify-content: space-between;
+        .social-btn {
+            background-color: #1877f2;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.05rem;
+            display: inline-flex;
             align-items: center;
-            margin-bottom: 10px;
-            transition: all 0.2s ease;
+            gap: 8px;
+            margin-top: 15px;
+            transition: 0.3s;
         }
-        .item-row:hover {
-            border-color: var(--dark-beige);
-        }
-        .item-name {
-            font-size: 15px;
-            font-weight: 700;
-            color: #fff;
-        }
-        .item-price {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--dark-beige);
-            direction: ltr;
-        }
-        .hidden {
-            display: none !important;
+        .social-btn:hover {
+            background-color: #0d65d9;
         }
     </style>
 </head>
 <body>
 
-<div class="phone-container">
-    <div class="header">
-        <div class="top-bar">
-            <button class="lang-btn" onclick="toggleLang()">EN / عربي</button>
-            <span style="font-size: 15px; color: var(--dark-beige); font-weight: 700;" id="location-text">الزرقاء - ضاحية الأميرة سلمى</span>
-        </div>
-        <img src="logo.jpg" alt="Panorama Cafe Logo" class="logo-img">
-        <h1 class="cafe-title">بانوراما الشرق</h1>
-        <p class="cafe-subtitle">Panorama Cafe</p>
-    </div>
+    <!-- Header -->
+    <header>
+        <h1>مزرعة وشاليه شهم</h1>
+        <p>للّمة العيلة والأصحاب.. أهلاً وسهلاً فيكم 🤍✨</p>
+        <a href="#contact" class="btn"><i class="fa-solid fa-phone"></i> احجز الآن</a>
+    </header>
 
-    <div class="content" id="main-content">
-        <div id="home-view" class="home-view">
-            <div class="action-grid">
-                <a href="#" class="action-card" onclick="showCategories(); return false;">
-                    <i class="fa-solid fa-book-open"></i>
-                    <span id="txt-menu">تصفح المنيو</span>
-                </a>
-                <a href="https://maps.app.goo.gl/cfSF1HZGTdfAXseH8?g_st=ic" target="_blank" class="action-card">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span id="txt-loc">موقعنا</span>
-                </a>
-                <a href="https://search.google.com/local/writereview?placeid=ChIJ02BBfvlvGxURbjp4JILR6vE" target="_blank" class="action-card">
-                    <i class="fa-solid fa-star"></i>
-                    <span id="txt-rate">قيمنا على جوجل</span>
-                </a>
-                <a href="tel:0779970924" class="action-card">
-                    <i class="fa-solid fa-phone"></i>
-                    <span id="txt-contact">تواصل معنا</span>
-                </a>
-            </div>
+    <div class="container">
 
-            <div class="social-icons">
-                <a href="https://www.instagram.com/panoramacafe_jo?stkn=Z25ndXBkM3I5ZHU3" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.facebook.com/share/1BGKZZVhKh/?mibextid=wwXIfr" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://wa.me/962779970924" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-            </div>
+        <!-- About Us -->
+        <section>
+            <h2 class="section-title">عن المزرعة والشاليه</h2>
+            <p class="about-text">
+في مزرعتنا، بنوفرلكم مكان يجمع بين الراحة والخصوصية وأجواء الطبيعة الجميلة، لتستمتعوا بوقتكم بعيدًا عن ضجة المدينة.
 
-            <p class="footer-brand">PANORAMA CAFE<br><span style="color: #aaa;">More Than A Café</span></p>
-        </div>
+مكان مناسب للّمة العيلة والأصحاب، وقضاء يوم مليان ضحك وراحة وذكريات حلوة. 🏡🤍
 
-        <div id="categories-view" class="hidden">
-            <button class="back-btn" onclick="showHome()"><i class="fa-solid fa-arrow-right"></i> <span id="txt-back-home">الرئيسية</span></button>
-            <div class="section-header-title" id="txt-menu-title">قائمة الطعام / Our Menu</div>
-            <div class="category-list" id="cat-list-container"></div>
-        </div>
+من المساحات الخضراء والمسبح، إلى منطقة الأطفال والمرافق المتنوعة، كل التفاصيل مجهزة عشان تكون زيارتكم ممتعة ومريحة.
 
-        <div id="items-view" class="hidden">
-            <button class="back-btn" onclick="showCategories()"><i class="fa-solid fa-arrow-right"></i> <span id="txt-back-menu">العودة للأقسام</span></button>
-            <div class="section-header-title" id="category-title-header">اسم القسم</div>
-            <div id="items-container"></div>
-        </div>
-    </div>
-</div>
+مزرعتنا.. مكانكم للّمة الحلوة واللحظات اللي بتستاهل تنعاش. 🌿
+            </p>
+        </section>
 
-<script>
-    const menuData = {
-        ar: {
-            menu: "تصفح المنيو",
-            loc: "موقعنا",
-            rate: "قيمنا على جوجل",
-            contact: "تواصل معنا",
-            backHome: "الرئيسية",
-            backMenu: "العودة للأقسام",
-            menuTitle: "قائمة الطعام / Our Menu",
-            categories: [
-                { id: "hot", name: "مشروبات ساخنة", icon: "fa-mug-hot", items: [
-                    { name: "قهوة تركي / سنجل", price: "1.75 JD" },
-                    { name: "قهوة تركي / دبل", price: "2.25 JD" },
-                    { name: "اسبريسو / سنجل", price: "2.00 JD" },
-                    { name: "اسبريسو / دبل", price: "2.50 JD" },
-                    { name: "امريكانو", price: "2.50 JD" },
-                    { name: "لاتيه", price: "2.50 JD" },
-                    { name: "لاتيه كراميل", price: "2.75 JD" },
-                    { name: "لاتيه فانيلا", price: "2.50 JD" },
-                    { name: "لاتيه تشوكلت", price: "2.50 JD" },
-                    { name: "موكا كراميل", price: "2.50 JD" },
-                    { name: "موكا دارك", price: "2.50 JD" },
-                    { name: "كابتشينو", price: "3.00 JD" },
-                    { name: "هوت تشوكلت", price: "3.00 JD" },
-                    { name: "نسكافيه 3X1", price: "2.00 JD" },
-                    { name: "نسكافيه بلاك", price: "2.50 JD" },
-                    { name: "نسكافيه بلاك مع حليب", price: "3.00 JD" },
-                    { name: "شاي", price: "1.50 JD" },
-                    { name: "شاي كرك", price: "2.50 JD" },
-                    { name: "أعشاب", price: "1.50 JD" },
-                    { name: "سحلب (موسمي)", price: "3.00 JD" },
-                    { name: "فلات وايت", price: "2.00 JD" },
-                    { name: "اسبريسو ميكاتو", price: "2.00 JD" },
-                    { name: "لاتيه لوتس", price: "3.00 JD" },
-                    { name: "كوفي كريم", price: "2.50 JD" },
-                    { name: "اورانج امريكانو", price: "2.50 JD" }
-                ]},
-                { id: "ice", name: "آيس كوفي", icon: "fa-glass-water", items: [
-                    { name: "آيس لاتيه فانيلا", price: "3.00 JD" },
-                    { name: "آيس لاتيه تشوكلت", price: "3.00 JD" },
-                    { name: "آيس كراميل ماكياتو", price: "3.00 JD" },
-                    { name: "آيس كوفي كلاسيك", price: "2.50 JD" },
-                    { name: "آيس كوفي الشرق سموذي", price: "3.00 JD" },
-                    { name: "آيس موكا كراميل", price: "3.00 JD" },
-                    { name: "آيس موكا دارك", price: "3.00 JD" },
-                    { name: "آيس كابتشينو", price: "3.50 JD" },
-                    { name: "فرابتشينو كراميل", price: "4.00 JD" },
-                    { name: "فرابتشينو تشوكلت", price: "4.00 JD" },
-                    { name: "فرابتشينو بستانشيو", price: "4.00 JD" },
-                    { name: "آيس إسبريسو الفريدو", price: "2.50 JD" },
-                    { name: "آيس أمريكانو", price: "2.50 JD" },
-                    { name: "آيس لاتيه لوتس", price: "3.00 JD" },
-                    { name: "آيس لاتيه ستروبيري", price: "3.00 JD" },
-                    { name: "آيس كوكو نت سبانيش لاتيه", price: "3.00 JD" },
-                    { name: "أفوكاتو", price: "3.50 JD" }
-                ]},
-                { id: "juices", name: "كوكتيل وعصائر طبيعية", icon: "fa-blender", items: [
-                    { name: "كوكتيل الشرق", price: "4.00 JD" },
-                    { name: "موز وحليب", price: "3.00 JD" },
-                    { name: "موز وحليب وفراولة", price: "3.00 JD" },
-                    { name: "موز وفراولة", price: "2.75 JD" },
-                    { name: "موز وفراولة ومانجا (بدون حليب)", price: "3.00 JD" },
-                    { name: "مانجا", price: "3.00 JD" },
-                    { name: "عصير ليمون", price: "2.75 JD" },
-                    { name: "عصير برتقال", price: "2.75 JD" },
-                    { name: "برتقال وفراولة", price: "3.50 JD" },
-                    { name: "عصير ليمون وبرتقال وزنجبيل", price: "3.00 JD" },
-                    { name: "كيوي", price: "3.25 JD" },
-                    { name: "كيوي وفراولة", price: "3.75 JD" },
-                    { name: "كيوي وليمون", price: "3.75 JD" },
-                    { name: "كيوي ومانجا", price: "3.00 JD" },
-                    { name: "كيوي ونعنع", price: "3.00 JD" },
-                    { name: "ليمون ونعنع", price: "3.25 JD" },
-                    { name: "أناناس سموذي", price: "3.00 JD" },
-                    { name: "موز ومانجا وباشن", price: "3.00 JD" },
-                    { name: "أفوكادو", price: "4.50 JD" },
-                    { name: "أفوكادو ومانجا", price: "4.50 JD" },
-                    { name: "أفوكادو وموز وحليب", price: "3.50 JD" },
-                    { name: "دارين", price: "3.50 JD" }
-                ]},
-                { id: "mocktail", name: "موكتيل وسموذي", icon: "fa-champagne-glasses", items: [
-                    { name: "مكس الشرق", price: "4.00 JD" },
-                    { name: "مكس بيري", price: "3.00 JD" },
-                    { name: "مكس لافندر", price: "3.00 JD" },
-                    { name: "باشن فروت", price: "3.00 JD" },
-                    { name: "باشن ومانجا", price: "3.00 JD" },
-                    { name: "باشن وخوخ", price: "3.00 JD" },
-                    { name: "خوخ ومانجا", price: "3.00 JD" },
-                    { name: "بينا كولادا", price: "3.00 JD" },
-                    { name: "جرينادين", price: "3.00 JD" },
-                    { name: "بلوهاوايان", price: "3.00 JD" },
-                    { name: "موهيتو", price: "3.00 JD" }
-                ]},
-                { id: "milkshake", name: "ميلك شيك ومشروبات غازية وتسالي", icon: "fa-ice-cream", items: [
-                    { name: "ميلك شيك عربية", price: "4.00 JD" },
-                    { name: "ميلك شيك لوتس", price: "4.00 JD" },
-                    { name: "ميلك شيك أوريو", price: "4.00 JD" },
-                    { name: "ميلك شيك سنيكرز", price: "4.00 JD" },
-                    { name: "ميلك شيك تشوكلت", price: "4.00 JD" },
-                    { name: "ميلك شيك فراولة", price: "4.00 JD" },
-                    { name: "مياه معدنية", price: "0.50 JD" },
-                    { name: "مشروبات غازية", price: "1.50 JD" },
-                    { name: "بوم بوم", price: "1.75 JD" },
-                    { name: "بوم بوم مع نكهة", price: "3.00 JD" },
-                    { name: "ريد بول", price: "2.75 JD" },
-                    { name: "ريد بول مع نكهة", price: "3.75 JD" },
-                    { name: "مكسرات", price: "3.00 JD" },
-                    { name: "بوشار", price: "1.00 JD" },
-                    { name: "ذرة", price: "1.50 JD" }
-                ]},
-                { id: "shisha", name: "الأراجيل", icon: "fa-smoking", items: [
-                    { name: "أرجيلة الشرق", price: "5.00 JD" },
-                    { name: "أرجيلة النخلة", price: "5.00 JD" },
-                    { name: "أرجيلة تفاحتين مزايا", price: "4.00 JD" },
-                    { name: "أرجيلة ليمون ونعنع", price: "4.00 JD" },
-                    { name: "أرجيلة علكة وقرفة", price: "4.00 JD" },
-                    { name: "أرجيلة بطيخ ونعنع", price: "4.00 JD" },
-                    { name: "أرجيلة كاندي", price: "4.00 JD" },
-                    { name: "أرجيلة بلوبيري", price: "4.00 JD" },
-                    { name: "أرجيلة علكة سهم", price: "4.00 JD" },
-                    { name: "أرجيلة LOVE", price: "4.00 JD" },
-                    { name: "أرجيلة علكة ونعنع", price: "4.00 JD" },
-                    { name: "أرجيلة مانجا ودراق", price: "4.00 JD" },
-                    { name: "أرجيلة عنب وتوت", price: "4.00 JD" },
-                    { name: "تغيير الرأس", price: "2.00 JD" },
-                    { name: "خدمة الأراجيل", price: "3.00 JD" }
-                ]}
-            ]
-        },
-        en: {
-            menu: "View Menu",
-            loc: "Our Location",
-            rate: "Rate Us",
-            contact: "Contact Us",
-            backHome: "Home",
-            backMenu: "Back to Menu",
-            menuTitle: "Our Menu",
-            categories: [
-                { id: "hot", name: "Hot Drinks", icon: "fa-mug-hot", items: [
-                    { name: "Turkish Coffee / Single", price: "1.75 JD" },
-                    { name: "Turkish Coffee / Double", price: "2.25 JD" },
-                    { name: "Espresso / Single", price: "2.00 JD" },
-                    { name: "Espresso / Double", price: "2.50 JD" },
-                    { name: "Americano", price: "2.50 JD" },
-                    { name: "Latte", price: "2.50 JD" },
-                    { name: "Caramel Latte", price: "2.75 JD" },
-                    { name: "Vanilla Latte", price: "2.50 JD" },
-                    { name: "Chocolate Latte", price: "2.50 JD" },
-                    { name: "Caramel Mocha", price: "2.50 JD" },
-                    { name: "Dark Mocha", price: "2.50 JD" },
-                    { name: "Cappuccino", price: "3.00 JD" },
-                    { name: "Hot Chocolate", price: "3.00 JD" },
-                    { name: "Nescafe 3X1", price: "2.00 JD" },
-                    { name: "Black Nescafe", price: "2.50 JD" },
-                    { name: "Black Nescafe with Milk", price: "3.00 JD" },
-                    { name: "Tea", price: "1.50 JD" },
-                    { name: "Karak Tea", price: "2.50 JD" },
-                    { name: "Herbal Tea", price: "1.50 JD" },
-                    { name: "Salab (Seasonal)", price: "3.00 JD" },
-                    { name: "Flat White", price: "2.00 JD" },
-                    { name: "Espresso Macchiato", price: "2.00 JD" },
-                    { name: "Lotus Latte", price: "3.00 JD" },
-                    { name: "Coffee Cream", price: "2.50 JD" },
-                    { name: "Orange Americano", price: "2.50 JD" }
-                ]},
-                { id: "ice", name: "Ice Coffee", icon: "fa-glass-water", items: [
-                    { name: "Iced Vanilla Latte", price: "3.00 JD" },
-                    { name: "Iced Chocolate Latte", price: "3.00 JD" },
-                    { name: "Iced Caramel Macchiato", price: "3.00 JD" },
-                    { name: "Iced Classic Coffee", price: "2.50 JD" },
-                    { name: "Iced Al-Sharq Smoothie", price: "3.00 JD" },
-                    { name: "Iced Caramel Mocha", price: "3.00 JD" },
-                    { name: "Iced Dark Mocha", price: "3.00 JD" },
-                    { name: "Iced Cappuccino", price: "3.50 JD" },
-                    { name: "Caramel Frappuccino", price: "4.00 JD" },
-                    { name: "Chocolate Frappuccino", price: "4.00 JD" },
-                    { name: "Pistachio Frappuccino", price: "4.00 JD" },
-                    { name: "Iced Espresso Alfredo", price: "2.50 JD" },
-                    { name: "Iced Americano", price: "2.50 JD" },
-                    { name: "Iced Lotus Latte", price: "3.00 JD" },
-                    { name: "Iced Strawberry Latte", price: "3.00 JD" },
-                    { name: "Iced Coconut Spanish Latte", price: "3.00 JD" },
-                    { name: "Affogato", price: "3.50 JD" }
-                ]},
-                { id: "juices", name: "Cocktails & Fresh Juices", icon: "fa-blender", items: [
-                    { name: "Al-Sharq Cocktail", price: "4.00 JD" },
-                    { name: "Banana & Milk", price: "3.00 JD" },
-                    { name: "Banana, Milk & Strawberry", price: "3.00 JD" },
-                    { name: "Banana & Strawberry", price: "2.75 JD" },
-                    { name: "Banana, Strawberry & Mango (No Milk)", price: "3.00 JD" },
-                    { name: "Mango", price: "3.00 JD" },
-                    { name: "Lemon Juice", price: "2.75 JD" },
-                    { name: "Orange Juice", price: "2.75 JD" },
-                    { name: "Orange & Strawberry", price: "3.50 JD" },
-                    { name: "Lemon, Orange & Ginger", price: "3.00 JD" },
-                    { name: "Kiwi", price: "3.25 JD" },
-                    { name: "Kiwi & Strawberry", price: "3.75 JD" },
-                    { name: "Kiwi & Lemon", price: "3.75 JD" },
-                    { name: "Kiwi & Mango", price: "3.00 JD" },
-                    { name: "Kiwi & Mint", price: "3.00 JD" },
-                    { name: "Lemon & Mint", price: "3.25 JD" },
-                    { name: "Pineapple Smoothie", price: "3.00 JD" },
-                    { name: "Banana, Mango & Passion", price: "3.00 JD" },
-                    { name: "Avocado", price: "4.50 JD" },
-                    { name: "Avocado & Mango", price: "4.50 JD" },
-                    { name: "Avocado, Banana & Milk", price: "3.50 JD" },
-                    { name: "Dareen", price: "3.50 JD" }
-                ]},
-                { id: "mocktail", name: "Mocktail & Smoothie", icon: "fa-champagne-glasses", items: [
-                    { name: "Al-Sharq Mix", price: "4.00 JD" },
-                    { name: "Berry Mix", price: "3.00 JD" },
-                    { name: "Lavender Mix", price: "3.00 JD" },
-                    { name: "Passion Fruit", price: "3.00 JD" },
-                    { name: "Passion & Mango", price: "3.00 JD" },
-                    { name: "Passion & Peach", price: "3.00 JD" },
-                    { name: "Peach & Mango", price: "3.00 JD" },
-                    { name: "Pina Colada", price: "3.00 JD" },
-                    { name: "Grenadine", price: "3.00 JD" },
-                    { name: "Blue Hawaiian", price: "3.00 JD" },
-                    { name: "Mojito", price: "3.00 JD" }
-                ]},
-                { id: "milkshake", name: "Milkshake & Soft Drinks & Snacks", icon: "fa-ice-cream", items: [
-                    { name: "Arabic Milkshake", price: "4.00 JD" },
-                    { name: "Lotus Milkshake", price: "4.00 JD" },
-                    { name: "Oreo Milkshake", price: "4.00 JD" },
-                    { name: "Snickers Milkshake", price: "4.00 JD" },
-                    { name: "Chocolate Milkshake", price: "4.00 JD" },
-                    { name: "Strawberry Milkshake", price: "4.00 JD" },
-                    { name: "Mineral Water", price: "0.50 JD" },
-                    { name: "Soft Drinks", price: "1.50 JD" },
-                    { name: "Bom Bom", price: "1.75 JD" },
-                    { name: "Bom Bom Flavored", price: "3.00 JD" },
-                    { name: "Red Bull", price: "2.75 JD" },
-                    { name: "Red Bull Flavored", price: "3.75 JD" },
-                    { name: "Nuts", price: "3.00 JD" },
-                    { name: "Popcorn", price: "1.00 JD" },
-                    { name: "Corn", price: "1.50 JD" }
-                ]},
-                { id: "shisha", name: "Shisha", icon: "fa-smoking", items: [
-                    { name: "Al-Sharq Shisha", price: "5.00 JD" },
-                    { name: "Al-Nakhlah Shisha", price: "5.00 JD" },
-                    { name: "Mazaya Two Apples Shisha", price: "4.00 JD" },
-                    { name: "Lemon & Mint Shisha", price: "4.00 JD" },
-                    { name: "Gum & Cinnamon Shisha", price: "4.00 JD" },
-                    { name: "Watermelon & Mint Shisha", price: "4.00 JD" },
-                    { name: "Candy Shisha", price: "4.00 JD" },
-                    { name: "Blueberry Shisha", price: "4.00 JD" },
-                    { name: "Sahm Gum Shisha", price: "4.00 JD" },
-                    { name: "LOVE Shisha", price: "4.00 JD" },
-                    { name: "Gum & Mint Shisha", price: "4.00 JD" },
-                    { name: "Mango & Peach Shisha", price: "4.00 JD" },
-                    { name: "Grape & Berry Shisha", price: "4.00 JD" },
-                    { name: "Head Change", price: "2.00 JD" },
-                    { name: "Shisha Service", price: "3.00 JD" }
-                ]}
-            ]
-        }
-    };
-
-    let currentLang = 'ar';
-
-    function toggleLang() {
-        currentLang = currentLang === 'ar' ? 'en' : 'ar';
-        document.documentElement.lang = currentLang;
-        document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-        updateUI();
-        if(!document.getElementById('categories-view').classList.contains('hidden')) {
-            showCategories();
-        }
-    }
-
-    function updateUI() {
-        const d = menuData[currentLang];
-        document.getElementById('txt-menu').innerText = d.menu;
-        document.getElementById('txt-loc').innerText = d.loc;
-        document.getElementById('txt-rate').innerText = d.rate;
-        document.getElementById('txt-contact').innerText = d.contact;
-        document.getElementById('txt-back-home').innerText = d.backHome;
-        document.getElementById('txt-back-menu').innerText = d.backMenu;
-        document.getElementById('txt-menu-title').innerText = d.menuTitle;
-        document.getElementById('location-text').innerText = currentLang === 'ar' ? 'الزرقاء - ضاحية الأميرة سلمى' : 'Zarqa - Princess Salma Suburb';
-    }
-
-    function showHome() {
-        document.getElementById('home-view').classList.remove('hidden');
-        document.getElementById('categories-view').classList.add('hidden');
-        document.getElementById('items-view').classList.add('hidden');
-    }
-
-    function showCategories() {
-        document.getElementById('home-view').classList.add('hidden');
-        document.getElementById('categories-view').classList.remove('hidden');
-        document.getElementById('items-view').classList.add('hidden');
-
-        const container = document.getElementById('cat-list-container');
-        container.innerHTML = '';
-
-        menuData[currentLang].categories.forEach(cat => {
-            const card = document.createElement('div');
-            card.className = 'category-card';
-            card.onclick = () => showItems(cat.id);
-            card.innerHTML = `
-                <div class="category-info">
-                    <i class="fa-solid ${cat.icon}"></i>
-                    <div>
-                        <h3>${cat.name}</h3>
-                        <p>${cat.items.length} ${currentLang === 'ar' ? 'عناصر' : 'items'}</p>
-                    </div>
+        <!-- Features -->
+        <section>
+            <h2 class="section-title">مرافق وخدمات المزرعة</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fa-solid fa-water-ladder"></i>
+                    <h3>المسبح الخارجي</h3>
+                    <p>مسبح كبير بمساحة 14×6 متر، وعمق يبدأ من نصف متر وحتى 190 سم، مع غطاء كامل للحماية من أشعة الشمس ومسبح خاص للأطفال مناسب وآمن.</p>
                 </div>
-                <i class="fa-solid fa-chevron-${currentLang === 'ar' ? 'left' : 'right'}"></i>
-            `;
-            container.appendChild(card);
-        });
-    }
+                <div class="feature-card">
+                    <i class="fa-solid fa-house-chimney"></i>
+                    <h3>الشاليه والجلوس</h3>
+                    <p>غرف نوم مريحة ومكيفة، صالة واسعة ومكيفة بمطبخ أمريكي فاخر ومجهز، حمامات داخلية وخارجية مع شاورات.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <h3>الترفيه والألعاب</h3>
+                    <p>بلياردو داخلي 9 قدم، طاولة تنس، ملعب، سماعات بلوتوث محيطية، ساحة أطفال آمنة، وترامبولين 3×3.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-fire-burner"></i>
+                    <h3>الجلسات الخارجية والشواء</h3>
+                    <p>جلسات خارجية وسط أجواء طبيعية وإطلالات جميلة، مكان مخصص للباربيكيو، الشواء، والزرب.</p>
+                </div>
+            </div>
+        </section>
 
-    function showItems(catId) {
-        document.getElementById('categories-view').classList.add('hidden');
-        document.getElementById('items-view').classList.remove('hidden');
+        <!-- أيقونة / زر الدخول للصور -->
+        <div class="gallery-btn-container" id="gallery-btn-container">
+            <button class="gallery-btn" onclick="showGallery()">
+                <i class="fa-solid fa-images"></i>
+                اضغط هنا للدخول إلى معرض الصور
+            </button>
+        </div>
 
-        const cat = menuData[currentLang].categories.find(c => c.id === catId);
-        document.getElementById('category-title-header').innerText = cat.name;
+        <!-- Gallery Section -->
+        <section id="gallery-section">
+            <h2 class="section-title">معرض صور المزرعة</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="IMG_7163.jpeg" alt="مزرعة شهم"></div>
+                <div class="gallery-item"><img src="W.PNG" alt="مزرعة شهم"></div>
+                <div class="gallery-item"><img src="V.PNG" alt="مزرعة شهم"></div>
+                <div class="gallery-item"><img src="K.PNG" alt="مزرعة شهم"></div>
+                <div class="gallery-item"><img src="N.PNG" alt="مزرعة شهم"></div>
+                <div class="gallery-item"><img src="L.PNG" alt="مزرعة شهم"></div>
+                <div class="gallery-item"><img src="A.PNG" alt="مزرعة شهم"></div>
+                <div class="gallery-item"><img src="E.PNG" alt="مزرعة شهم"></div>
+                <div class="gallery-item"><img src="M.PNG" alt="مزرعة شهم"></div>
+                <div class="gallery-item"><img src="G.PNG" alt="مزرعة شهم"></div>
+                <div class="gallery-item"><img src="H.PNG" alt="مزرعة شهم"></div>
+                <div class="gallery-item"><img src="I.PNG" alt="مزرعة شهم"></div>
+                <div class="gallery-item"><img src="Q.PNG" alt="مزرعة شهم"></div>
+                <div class="gallery-item"><img src="P.PNG" alt="مزرعة شهم"></div>
+            </div>
+        </section>
 
-        const container = document.getElementById('items-container');
-        container.innerHTML = '';
+        <!-- Booking Types & Info -->
+        <section>
+            <h2 class="section-title">تفاصيل الحجوزات</h2>
+            <div class="info-box">
+                <div class="info-item">
+                    <i class="fa-solid fa-sun"></i>
+                    <h4>حجوزات صباحية</h4>
+                    <p>استمتع بالدفء والنشاط وسط الطبيعة</p>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-moon"></i>
+                    <h4>حجوزات مسائية</h4>
+                    <p>أجواء ليلية ساحرة وموسيقية هادئة</p>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-car"></i>
+                    <h4>كراج واسع</h4>
+                    <p>يتسع كراج المزرعة حتى 14 سيارة بكل راحّة</p>
+                </div>
+            </div>
+        </section>
 
-        cat.items.forEach(item => {
-            const row = document.createElement('div');
-            row.className = 'item-row';
-            row.innerHTML = `
-                <span class="item-name">${item.name}</span>
-                <span class="item-price">${item.price}</span>
-            `;
-            container.appendChild(row);
-        });
-    }
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <h2 class="section-title" style="color: white;">للحجز والاستفسار والمعاينة</h2>
+            <p>الموقع: بلعما – تبعد عن بلدية بلعما كيلو و 500 متر.</p>
+            <div class="phones">
+                0776441130<br>
+                0785138386
+            </div>
+            <a href="https://wa.me/962776441130" target="_blank" class="whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب
+            </a>
+        </section>
 
-    updateUI();
-</script>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>جميع الحقوق محفوظة © مزرعة وشاليه شهم 2026</p>
+        <a href="https://www.facebook.com/share/1BCt6EFbsd/?mibextid=wwXIfr" target="_blank" class="social-btn">
+            <i class="fa-brands fa-facebook"></i> صفحتنا على الفيسبوك
+        </a>
+    </footer>
+
+    <!-- سكربت إظهار الصور -->
+    <script>
+        function showGallery() {
+            document.getElementById('gallery-btn-container').style.display = 'none';
+            var gallery = document.getElementById('gallery-section');
+            gallery.style.display = 'block';
+            gallery.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 
 </body>
 </html>
