@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مزرعة وشاليه شهم | راحة، طبيعة، أجواء مميزة</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -15,7 +15,7 @@
             --accent: #d4a373;
             --dark: #1b4332;
             --light: #f8f9fa;
-            --text-color: #333333;
+            --text-color: #444444;
         }
         * {
             margin: 0;
@@ -26,35 +26,44 @@
         body {
             background-color: var(--light);
             color: var(--text-color);
-            line-height: 1.8;
+            font-size: 0.95rem; /* تصغير عام لحجم الخط في الصفحة */
+            line-height: 1.7;
         }
         /* Header - Background Image */
         header {
-            background: linear-gradient(rgba(27, 67, 50, 0.75), rgba(27, 67, 50, 0.75)), url('IMG_7163.jpeg');
+            background: linear-gradient(rgba(27, 67, 50, 0.8), rgba(27, 67, 50, 0.8)), url('IMG_7163.jpeg');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            padding: 140px 20px;
+            padding: 130px 20px;
         }
+        /* خط اسم المزرعة مع تأثير الإضاءة الفخم */
         header h1 {
-            font-size: 3rem;
+            font-family: 'Amiri', serif;
+            font-size: 3.5rem;
             margin-bottom: 15px;
-            font-weight: 900;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                         0 0 20px rgba(82, 183, 136, 0.8), 
+                         0 0 30px rgba(82, 183, 136, 0.6);
+            letter-spacing: 1px;
         }
         header p {
-            font-size: 1.4rem;
-            margin-bottom: 30px;
-            color: #e9ecef;
+            font-size: 1.15rem; /* تصغير حجم جملة الترحيب قليلاً لتكون أنيقّة */
+            margin-bottom: 25px;
+            color: #f1f3f5;
+            font-weight: 300;
         }
         .btn {
             background-color: var(--accent);
             color: white;
-            padding: 12px 30px;
+            padding: 10px 25px;
             border-radius: 30px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
+            font-weight: 600;
+            font-size: 1rem;
             display: inline-block;
             transition: 0.3s;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -67,98 +76,99 @@
         .container {
             max-width: 1100px;
             margin: auto;
-            padding: 50px 20px;
+            padding: 40px 20px;
         }
         /* Sections */
         section {
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
         h2.section-title {
             text-align: center;
             color: var(--dark);
-            font-size: 2.2rem;
-            margin-bottom: 40px;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
             position: relative;
         }
         h2.section-title::after {
             content: '';
-            width: 80px;
-            height: 4px;
+            width: 60px;
+            height: 3px;
             background-color: var(--accent);
             display: block;
-            margin: 10px auto 0;
+            margin: 8px auto 0;
             border-radius: 2px;
         }
         /* About */
         .about-text {
             text-align: center;
-            font-size: 1.2rem;
-            max-width: 800px;
+            font-size: 1rem; /* تصغير خط نبذة عن المزرعة ليكون مريحاً بالقراءة */
+            max-width: 750px;
             margin: auto;
             color: #555;
-            white-space: pre-line; /* للحفاظ على ترتيب الأسطر والمسافات */
+            white-space: pre-line;
+            line-height: 1.8;
         }
         /* Features Grid */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
         }
         .feature-card {
             background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             transition: 0.3s;
-            border-right: 5px solid var(--secondary);
+            border-right: 4px solid var(--secondary);
         }
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
         }
         .feature-card i {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
             color: var(--dark);
         }
         .feature-card p {
             color: #666;
-            font-size: 1rem;
+            font-size: 0.9rem; /* تصغير نصوص الخدمات */
         }
         /* Gallery Grid */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
         }
         .gallery-item {
             background: white;
-            padding: 10px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             transition: 0.3s;
         }
         .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
         }
         .gallery-item img {
             width: 100%;
-            height: 250px;
+            height: 230px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 8px;
         }
         /* Info Box */
         .info-box {
             background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
@@ -166,26 +176,30 @@
         }
         .info-item {
             flex: 1;
-            min-width: 200px;
-            margin: 15px;
+            min-width: 180px;
+            margin: 10px;
         }
         .info-item i {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--accent);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .info-item h4 {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             color: var(--dark);
-            margin-bottom: 5px;
+            margin-bottom: 4px;
+        }
+        .info-item p {
+            font-size: 0.85rem;
+            color: #666;
         }
         /* Contact Section */
         .contact-section {
             background-color: var(--dark);
             color: white;
             text-align: center;
-            padding: 60px 20px;
-            border-radius: 20px;
+            padding: 50px 20px;
+            border-radius: 16px;
         }
         .contact-section h2 {
             color: white;
@@ -193,24 +207,27 @@
         .contact-section h2::after {
             background-color: var(--accent);
         }
+        .contact-section p {
+            font-size: 0.95rem;
+        }
         .phones {
-            font-size: 1.5rem;
-            margin: 20px 0;
+            font-size: 1.35rem;
+            margin: 15px 0;
             direction: ltr;
             font-weight: bold;
         }
         .whatsapp-btn {
             background-color: #25d366;
             color: white;
-            padding: 12px 35px;
+            padding: 10px 30px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 8px;
+            margin-top: 10px;
             transition: 0.3s;
         }
         .whatsapp-btn:hover {
@@ -219,10 +236,10 @@
         /* Footer */
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             background-color: #112c21;
             color: #aaa;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
     </style>
 </head>
