@@ -26,12 +26,12 @@
         body {
             background-color: var(--light);
             color: var(--text-color);
-            font-size: 0.95rem; /* تصغير عام لحجم الخط في الصفحة */
+            font-size: 0.95rem;
             line-height: 1.7;
         }
         /* Header - Background Image */
         header {
-            background: linear-gradient(rgba(27, 67, 50, 0.8), rgba(27, 67, 50, 0.8)), url('IMG_7163.jpeg');
+            background: linear-gradient(rgba(27, 67, 50, 0.75), rgba(27, 67, 50, 0.75)), url('IMG_7163.jpeg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -51,7 +51,7 @@
             letter-spacing: 1px;
         }
         header p {
-            font-size: 1.15rem; /* تصغير حجم جملة الترحيب قليلاً لتكون أنيقّة */
+            font-size: 1.15rem;
             margin-bottom: 25px;
             color: #f1f3f5;
             font-weight: 300;
@@ -101,45 +101,72 @@
         /* About */
         .about-text {
             text-align: center;
-            font-size: 1rem; /* تصغير خط نبذة عن المزرعة ليكون مريحاً بالقراءة */
+            font-size: 1rem;
             max-width: 750px;
             margin: auto;
             color: #555;
             white-space: pre-line;
             line-height: 1.8;
         }
-        /* Features Grid */
+        /* Features Grid (مربعات الخدمات والأيقونات بجانب بعضها) */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
         }
         .feature-card {
             background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            padding: 25px 20px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             transition: 0.3s;
-            border-right: 4px solid var(--secondary);
+            text-align: center;
+            border-top: 4px solid var(--secondary);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
         }
-        .feature-card i {
-            font-size: 2.2rem;
+        .feature-icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: #e8f5e9;
             color: var(--primary);
-            margin-bottom: 12px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
         }
         .feature-card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 8px;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
             color: var(--dark);
         }
         .feature-card p {
             color: #666;
-            font-size: 0.9rem; /* تصغير نصوص الخدمات */
+            font-size: 0.85rem;
+            margin-bottom: 15px;
         }
+        .feature-link {
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            transition: 0.2s;
+        }
+        .feature-link:hover {
+            color: #bc6c25;
+        }
+
         /* Gallery Grid */
         .gallery-grid {
             display: grid;
@@ -268,35 +295,47 @@
             </p>
         </section>
 
-        <!-- Features -->
+        <!-- Features (مرافق وخدمات المزرعة كبطاقات مربعة مع أيقونات) -->
         <section>
             <h2 class="section-title">مرافق وخدمات المزرعة</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <i class="fa-solid fa-water-ladder"></i>
-                    <h3>المسبح الخارجي</h3>
-                    <p>مسبح كبير بمساحة 14×6 متر، وعمق يبدأ من نصف متر وحتى 190 سم، مع غطاء كامل للحماية من أشعة الشمس ومسبح خاص للأطفال مناسب وآمن.</p>
+                    <div>
+                        <div class="feature-icon-box"><i class="fa-solid fa-water-ladder"></i></div>
+                        <h3>المسبح الخارجي</h3>
+                        <p>مسبح كبير بمساحة 14×6 متر، وعمق من نصف متر لـ 190 سم، مع غطاء كامل ومسبح خاص للأطفال.</p>
+                    </div>
+                    <a href="#gallery" class="feature-link"><i class="fa-solid fa-images"></i> صور المسبح</a>
                 </div>
                 <div class="feature-card">
-                    <i class="fa-solid fa-house-chimney"></i>
-                    <h3>الشاليه والجلوس</h3>
-                    <p>غرف نوم مريحة ومكيفة، صالة واسعة ومكيفة بمطبخ أمريكي فاخر ومجهز، حمامات داخلية وخارجية مع شاورات.</p>
+                    <div>
+                        <div class="feature-icon-box"><i class="fa-solid fa-house-chimney"></i></div>
+                        <h3>الشاليه والجلوس</h3>
+                        <p>غرف نوم مكيفة، صالة واسعة بمطبخ أمريكي فاخر ومجهز، وحمامات داخلية وخارجية.</p>
+                    </div>
+                    <a href="#gallery" class="feature-link"><i class="fa-solid fa-images"></i> صور الشاليه</a>
                 </div>
                 <div class="feature-card">
-                    <i class="fa-solid fa-gamepad"></i>
-                    <h3>الترفيه والألعاب</h3>
-                    <p>بلياردو داخلي 9 قدم، طاولة تنس، ملعب، سماعات بلوتوث محيطية، ساحة أطفال آمنة، وترامبولين 3×3.</p>
+                    <div>
+                        <div class="feature-icon-box"><i class="fa-solid fa-gamepad"></i></div>
+                        <h3>الترفيه والألعاب</h3>
+                        <p>بلياردو 9 قدم، طاولة تنس، سماعات بلوتوث محيطية، ساحة أطفال وترامبولين 3×3.</p>
+                    </div>
+                    <a href="#gallery" class="feature-link"><i class="fa-solid fa-images"></i> صور الألعاب</a>
                 </div>
                 <div class="feature-card">
-                    <i class="fa-solid fa-fire-burner"></i>
-                    <h3>الجلسات الخارجية والشواء</h3>
-                    <p>جلسات خارجية وسط أجواء طبيعية وإطلالات جميلة، مكان مخصص للباربيكيو، الشواء، والزرب.</p>
+                    <div>
+                        <div class="feature-icon-box"><i class="fa-solid fa-fire-burner"></i></div>
+                        <h3>الجلسات والشواء</h3>
+                        <p>جلسات خارجية وسط الطبيعة، مع مكان مخصص للباربيكيو، الشواء، والزرب.</p>
+                    </div>
+                    <a href="#gallery" class="feature-link"><i class="fa-solid fa-images"></i> صور الجلسات</a>
                 </div>
             </div>
         </section>
 
         <!-- Gallery Section -->
-        <section>
+        <section id="gallery">
             <h2 class="section-title">معرض صور المزرعة</h2>
             <div class="gallery-grid">
                 <div class="gallery-item"><img src="IMG_7163.jpeg" alt="مزرعة شهم"></div>
